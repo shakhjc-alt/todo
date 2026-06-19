@@ -1,10 +1,106 @@
-*, *::before, *::after {
-  box-sizing: border-box;
+:root {
+  --bg-dark: #0a0a0f;
+  --bg-darker: #07070a;
+  --text-primary: #e0e0e5;
+  --text-secondary: #a0a0a5;
+  --accent-color: #6b46c1;
+  --border-color: #2a2a35;
+}
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 body {
-  background: #0a0a0f;
-  -webkit-font-smoothing: antialiased;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.todo-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: var(--bg-darker);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.todo-input input {
+  flex-grow: 1;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.todo-input button {
+  background: linear-gradient(135deg, var(--accent-color), #8b5cf6);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.todo-input button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-dark);
+  border: 1px solid var(--border-color);
+  padding: 12px 15px;
+  border-radius: 8px;
+}
+
+.todo-item-text {
+  flex-grow: 1;
+}
+
+.todo-item button {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.todo-item button:hover {
+  color: #ff1a1a;
 }
